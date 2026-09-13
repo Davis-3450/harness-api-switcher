@@ -4,10 +4,11 @@ import json
 from pathlib import Path
 
 import pytest
+from pytest import MonkeyPatch
 
 
 @pytest.fixture
-def sandbox(monkeypatch, tmp_path: Path) -> Path:
+def sandbox(monkeypatch: MonkeyPatch, tmp_path: Path) -> Path:
     home = tmp_path / "home"
     home.mkdir()
     monkeypatch.setenv("USERPROFILE", str(home))
