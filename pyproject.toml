@@ -1,0 +1,26 @@
+[project]
+name = "harness-api-switcher"
+version = "0.1.0"
+description = "Beautiful Rich TUI to switch API keys across coding harnesses (opencode, hermes, claude, codex) per profile."
+readme = "README.md"
+
+requires-python = ">=3.11"
+dependencies = [
+    "rich>=13.7",
+]
+
+[project.scripts]
+has = "harness_api_switcher:main"
+harness-api-switcher = "harness_api_switcher:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
